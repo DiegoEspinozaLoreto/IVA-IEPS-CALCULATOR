@@ -59,8 +59,11 @@ def agregar(precio, hasIva, hasIeps):
     eliminar_button.grid(row=0, column=3, padx=10, pady=12, sticky="ew")
 
     new_item_frame.pack(padx=10, pady=12)
-
-    print(item_data_dict)
+    checkbox_iva.deselect()
+    checkbox_ieps.deselect()
+    num_len = len(priceEntry.get())
+    priceEntry.delete(first_index=0,last_index=num_len)
+    error_label.configure(text="")
 
 
 def totalizar():
